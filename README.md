@@ -14,14 +14,14 @@ Bicycle power meter based on Arduino platform with Bluetooth Low Energy support.
 
 There are two different versions of HX711 module - a green and a red one. Both can operate with 10 and 80Hz update frequency, but the green has 10Hz and the red has 80Hz by default. Furthermore, red version has a shield to prevent interference from the environment. 
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/hx711.jpg" height="120" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/hx711.jpg" height="120" />
 
 The green and the red version have also slightly different pins layout. During testing it turned out that the red version has much more stable measurements.
 
 # Schematics
 Connections between HX711 and strain gauges have to be soldered continuously without any "weak wires". HX711 module is very sensitive for any noises and every not so solid connection can add some errors in measurements. 
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/wiring.png" height="400" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/wiring.png" height="400" />
 Wheatstone bridge on figure will be corrected.
 
 It is recommended to have a detachable main part, then the best way is to connect it with four-wire connector similar to Groove.
@@ -29,16 +29,16 @@ It is recommended to have a detachable main part, then the best way is to connec
 # Assembly
 Before soldering strain gauges, the place on the crank must be cleaned off paint. This should be done with sandpapers with an increasingly higher value. Sticking strain gauges omitting this step will result in much less sensitivity.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/1.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/1.jpg" height="200" />
 
 It is time to glue strain gauges after clearing place by IPA. The best way to do this is to use colorless an adhesive tape and an instant glue (cyanoacrylate).
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/2.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/2.jpg" height="200" />
 
 When strain gauge has been glued then slowly peel off the tape.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/3b.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/3.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/3b.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/3.jpg" height="200" />
 
 Strain gauges have to work in Wheatstone bridge layout, to measure values by operational amplifier HX711. In this case half bridge layout with temperature compensation has been implemented.
 
@@ -48,31 +48,31 @@ Two strain gauges are connected as shown on the figure above. Due to temperature
 
 Resistors, wires to strain gauges and a connector to the main part have been placed on an additional PCB. This board is not detachable.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/4.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/4.jpg" height="200" />
 
 Base parts can be assembled on a dedicated Adafruit Feather PCB.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/5.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/6.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/7.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/5.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/6.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/7.jpg" height="200" />
 
 After placing an Adafruit Feather Nrf52832 and a PCB on each other the main part has quite a small size. A battery should be placed on a crank and connected to the base module.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/8.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/8.jpg" height="200" />
 
 Unfortunately, in this case, the whole base module is very sensitive to dust and dirt. The best way to prevent it from environmental factors is to create and print a dedicated case. 
 
 The first version of the integrated base module (with 250 mAh battery) has dimensions 101x30x10mm
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/9.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/9.jpg" height="200" />
 
 The current version has more optimized dimensions 72x33x11mm but with a slightly smaller battery - 220mAh.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/15.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/14.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/13.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/11.jpg" height="200" />
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/12.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/15.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/14.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/13.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/11.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/12.jpg" height="200" />
 
 The final version has to have a cover for strain gauges and for an additional printed circuit board.
 
@@ -89,7 +89,7 @@ The power meter should work with any bike computer, sport watch or smartphone ap
 - Wahoo Fitness (Android application)
 - The Sufferfest (Windows application)
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/10.jpg" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/10.jpg" height="200" />
 
 # Known Issues
 Strain gauges with HX711 are very sensitive for temperature changes. Their behavior is similar to thermometer and during some time overall offset should be corrected or recalculated. Unfortunately there isn't obvious correlation and we couldn't increase or decrease offset with exact temperature change.
@@ -97,7 +97,7 @@ Strain gauges with HX711 are very sensitive for temperature changes. Their behav
 # Tests
 According to stationary tests based on transmission over USB cable there is around 70-80Hz sampling rate. Debug transmission over Bluetooth is slower and has around 40Hz. In order to analyze and debug live data, there is additional software which allows recording and showing results. These python scripts can operate on any Linux based machine (computer, Raspberry Pi) with Bluetooth LE support.
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/live_data.png" height="200" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/live_data.png" height="200" />
 
 After recording the session, another script can create charts with various information:
 - crank angle
@@ -106,7 +106,7 @@ After recording the session, another script can create charts with various infor
 - calculated power
 - calculation range (between vertical gray lines)
 
-<img src="https://github.com/marwask/bicycle-power-meter/blob/master/images/training_chart.png" height="400" />
+<img src="https://github.com/marwask/bike-power-meter/blob/master/images/training_chart.png" height="400" />
 
 Currently cadence and power values, in order to increase stability, come from two crank rounds.
 
