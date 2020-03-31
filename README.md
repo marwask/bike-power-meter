@@ -3,7 +3,7 @@ Bicycle power meter based on Arduino platform with Bluetooth Low Energy support.
 # Specifications
 - it supports various bike computers, sport watches and smartphone applications with Bluetooth LE and power meter support
 - ~10 hours operation time with 220mAh battery (can be optimized)
-- strain gauges mounted on left crank
+- strain gauges mounted on the left crank
 
 # Hardware
 - Adafruit Feather Nrf52832 - module based on nRF52832 system with Bluetooth Low Energy and rechargeable LiPol battery support
@@ -19,10 +19,10 @@ There are two different versions of HX711 module - a green and a red one. Both c
 The green and the red version have also slightly different pins layout. During testing it turned out that the red version has much more stable measurements.
 
 # Schematics
-Connections between HX711 and strain gauges have to be soldered continuously without any "weak wires". HX711 module is very sensitive for any noises and every not so solid connection can add some errors in measurements. 
+Connections between HX711 and strain gauges have to be soldered continuously without any "weak wires". HX711 module is very sensitive to any noises and every not so solid connection can add some errors in measurements. 
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/wiring.png" height="400" />
-Wheatstone bridge on figure will be corrected.
+Wheatstone bridge on the figure above will be corrected. 
 
 It is recommended to have a detachable main part, then the best way is to connect it with four-wire connector similar to Groove.
 
@@ -35,16 +35,16 @@ It is time to glue strain gauges after clearing place by IPA. The best way to do
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/2.jpg" height="200" />
 
-When strain gauge has been glued then slowly peel off the tape.
+When the strain gauge has been glued then slowly peel off the tape.
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/3b.jpg" height="200" />
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/3.jpg" height="200" />
 
-Strain gauges have to work in Wheatstone bridge layout, to measure values by operational amplifier HX711. In this case half bridge layout with temperature compensation has been implemented.
+Strain gauges have to work in Wheatstone bridge layout. Values are measured by operational amplifier HX711. In this case half bridge layout with temperature compensation has been implemented.
 
 img
 
-Two strain gauges are connected as shown on the figure above. Due to temperature variation, both of them should have resistance change in the same way. Resistors have equal resistance and strain gauges also have to be identical to each other.
+Two strain gauges are connected as shown on the figure above. Due to temperature variation, both of them should have resistance change in the same way. Resistors have equal resistance and strain gauges also have to be identical.
 
 Resistors, wires to strain gauges and a connector to the main part have been placed on an additional PCB. This board is not detachable.
 
@@ -56,7 +56,7 @@ Base parts can be assembled on a dedicated Adafruit Feather PCB.
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/6.jpg" height="200" />
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/7.jpg" height="200" />
 
-After placing an Adafruit Feather Nrf52832 and a PCB on each other the main part has quite a small size. A battery should be placed on a crank and connected to the base module.
+After placing an Adafruit Feather Nrf52832 and a PCB on each other, the main part has quite a small size. A battery should be placed on the crank and connected to the base module.
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/8.jpg" height="200" />
 
@@ -77,7 +77,7 @@ The current version has more optimized dimensions 72x33x11mm but with a slightly
 The final version has to have a cover for strain gauges and for an additional printed circuit board.
 
 # Calibration
-There are two different stages of calibration. The first is to set a conversion factor from scale points to kg, the second is to set current offset to measure force. The initial calibration must be carried out before the first use. In "config.h" file is “initialConfiguration” variable. When is to “true”, then the power meter is in the initial configuration stage and set “knownWeight” variable in next variable. Probably the best way to properly measure “scaleValueToKgEquivalent” value is to hang a heavy thing (with a known weight) on a crank in horizontal position and then read the value from logs. It is obvious that a heavier thing can give more accurate factor. The second calibration step is always performed after the power meter is started. Each time, for the first 30 seconds, do not touch the crank for the calibration to be succeeded. During this process a red led is blinking.
+There are two different stages of calibration. The first is to set a conversion factor from scale points to kg, the second is to set current offset to measure force. The initial calibration must be carried out before the first use. In "config.h" file is “initialConfiguration” variable. When is set to “true”, then the power meter is in the initial configuration stage. The best way to properly measure “scaleValueToKgEquivalent” value is to hang a heavy thing (with a known weight set in ”knownWeight” variable) on a crank in horizontal position and then read the value from logs. The heavier thing can give more accurate factor. The second calibration step is always performed after the power meter is started. Each time, for the first 30 seconds, do not touch the crank for the calibration to succeed. During this process a red led is blinking.
 
 # Compatibility
 The power meter should work with any bike computer, sport watch or smartphone application with Bluetooth Low Energy and bike power meter support. The power meter was tested with:
@@ -92,10 +92,10 @@ The power meter should work with any bike computer, sport watch or smartphone ap
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/10.jpg" height="200" />
 
 # Known Issues
-Strain gauges with HX711 are very sensitive for temperature changes. Their behavior is similar to thermometer and during some time overall offset should be corrected or recalculated. Unfortunately there isn't obvious correlation and we couldn't increase or decrease offset with exact temperature change.
+Strain gauges with HX711 are very sensitive to temperature changes. Their behavior is similar to thermometer and during some time overall offset should be corrected or recalculated. Unfortunately, there isn't obvious correlation and we couldn't increase or decrease offset with exact temperature change.
 
 # Tests
-According to stationary tests based on transmission over USB cable there is around 70-80Hz sampling rate. Debug transmission over Bluetooth is slower and has around 40Hz. In order to analyze and debug live data, there is additional software which allows recording and showing results. These python scripts can operate on any Linux based machine (computer, Raspberry Pi) with Bluetooth LE support.
+According to stationary tests based on transmission over USB cable, there is around 70-80Hz sampling rate. Debug transmission over Bluetooth is slower and has around 40Hz. In order to analyze and debug live data, there is additional software which allows recording and showing results. These python scripts can operate on any Linux based machine (computer, Raspberry Pi) with Bluetooth LE support.
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/live_data.png" height="200" />
 
@@ -108,15 +108,15 @@ After recording the session, another script can create charts with various infor
 
 <img src="https://github.com/marwask/bike-power-meter/blob/master/images/training_chart.png" height="400" />
 
-Currently cadence and power values, in order to increase stability, come from two crank rounds.
+Currently cadence and power values, in order to increase stability of measurements, come from two crank rounds.
 
-In normal usage 220mAh LiPol battery lasts in around 10 hours.
+In normal usage 220mAh LiPol battery lasts for around 10 hours.
 
 # Accuracy
-Unfortunately, the only way to measure accuracy is to make direct comparison with a real power meter. I currently only have a Elite Turbo Muin trainer with power meter support, but its measurements are not so accurate.
+Unfortunately, the only way to measure accuracy is to make direct comparison with a real power meter. I currently only have a Elite Turbo Muin trainer with power meter support, but because its measurements are not so accurate, no tests has been performed.
 
 # Todo
-- dealing with huge strain gauges drift
+- coping with large straing gauges drift
 - autozero / autocalibration
 - manual calibration from bike computer / sport watch
 - battery optimization
